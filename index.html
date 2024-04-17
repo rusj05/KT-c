@@ -1,17 +1,31 @@
 <!DOCTYPE html>
-<html lang="fo">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uppgávur</title>
+    <title>Uppgavu Listi</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Uppgávur</h1>
-        <input type="text" id="taskInput" placeholder="Legg eina nýggja uppgávu...">
-        <button onclick="addTask()">Stovna Uppgávu</button>
-        <ul id="taskList"></ul>
+        <h1>Uppgavu Listi</h1>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <select id="userType">
+                <option value="teacher">Lærari</option>
+                <option value="student">Næmingur</option>
+            </select>
+            <button type="submit">Login</button>
+        </form>
+        <div id="taskListContainer" style="display: none;">
+            <form id="taskForm">
+                <input type="text" id="taskInput" placeholder="Stovna ein nýggjan uppgávu..." disabled>
+                <button type="button" id="addTaskBtn" disabled>Stovna Uppgávu</button>
+            </form>
+            <ul id="taskList"></ul>
+            <button id="logoutBtn">Logout</button>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
