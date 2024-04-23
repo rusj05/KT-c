@@ -45,8 +45,12 @@ document.addEventListener("DOMContentLoaded", function() {
             event.preventDefault();
             addTask();
         });
-        taskInput.disabled = false; // Enable task input
+        addTaskBtn.addEventListener("click", function(event) {
+            event.preventDefault();
+            addTask();
+        });
         addTaskBtn.disabled = false; // Enable the button
+        taskInput.disabled = false; // Enable input field for teachers
     }
 
     function enableTaskDeleting() {
@@ -59,8 +63,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function disableTaskAdding() {
         taskForm.removeEventListener("submit", addTask);
-        taskInput.disabled = true; // Disable task input
+        addTaskBtn.removeEventListener("click", addTask);
         addTaskBtn.disabled = true; // Disable the button
+        taskInput.disabled = true; // Disable input field for students
     }
 
     function disableTaskDeleting() {
